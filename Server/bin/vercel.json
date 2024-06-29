@@ -1,10 +1,10 @@
 {
   "version": 2,
   "builds": [
-    { "src": "routes/imagegenerate.js", "use": "@vercel/node" }
+    { "src": "../routes/imagegenerate.js", "use": "@vercel/node" }
   ],
   "routes": [
-    { "src": "/imagegenerate", "dest": "routes/imagegenerate.js" },
+    { "src": "/imagegenerate", "dest": "../routes/imagegenerate.js" },
     { "src": "/(.*)", "dest": "/" }
   ]
 }
