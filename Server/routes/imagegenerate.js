@@ -43,7 +43,6 @@ router.post('/', async function (req, res, next) {
         console.error('Failed to fetch from NVIDIA API:', error);
         res.status(500).json({ error: "Failed to fetch image" });
     }
-    console.log("run")
 });
 
 module.exports = router;
