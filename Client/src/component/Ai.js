@@ -7,9 +7,8 @@ import { useParams } from "react-router-dom"
 function Ai() {
     const [inputText, setInputText] = useState('');
     const [imageUrl, setImageUrl] = useState('');
-    const [collarType, setCollarType] = useState('--SELECT--');
-    const [clothType, setClothType] = useState('--SELECT--');
-
+    const [selectedSize, setSelectedSize] = useState('');
+    const [clothType, setClothType] = useState('');
     const [loading, setLoading] = useState(false);
     const [cart, setCart] = useState(true)
 
@@ -17,8 +16,9 @@ function Ai() {
     const handleInputChange = (e) => {
         setInputText(e.target.value);
     };
-    const handleCollarChange = (e) => {
-        setCollarType(e.target.value);
+
+    const handleChange = (event) => {
+        setSelectedSize(event.target.value);
     };
 
     const handleClothChange = (e) => {
@@ -31,9 +31,9 @@ function Ai() {
         const item = {
             productName: inputText,
             img: imageUrl,
-            price: Math.floor(Math.random() * (5000 - 1000 + 1)) + 1000,
+            price: Math.floor(Math.random() * (5000 - 1000 + 1)) + 100,
             count: 1,
-            collarType: collarType,
+            selectedSize: selectedSize,
             clothType: clothType
         };
         dispatch(addItem(item))
@@ -83,6 +83,7 @@ function Ai() {
     return (
         <div className='ai'>
             <h1>Customize your own Custom</h1>
+            <p>Please give a proper detailed instruction about your coustum to get perfect design as you think and mention gender </p>
             <div className='about'>
                 <input
                     type='search'
@@ -90,7 +91,7 @@ function Ai() {
                     value={inputText}
                     onChange={handleInputChange}
                 />
-                <button onClick={handleGenerateClick} disabled={loading}>
+                <button className='ai-button' onClick={handleGenerateClick} disabled={loading}>
                     {loading ? 'Generating...' : 'Generate'}
                 </button>
             </div>
@@ -99,17 +100,21 @@ function Ai() {
 
 
             <div className='options'>
-                <label htmlFor="collarType">Collar Type: </label>
-                <select id="collarType" value={collarType} onChange={handleCollarChange}>
-                    <option value="">--SELECT--</option>
-                    <option value="standard">Standard</option>
-                    <option value="mandarin">Mandarin</option>
-                    <option value="button-down">Button-down</option>
+                <label htmlFor="dress-size">Select Dress Size: </label>
+
+                <select id="dress-size" value={selectedSize} onChange={handleChange}>
+                    <option value="">--Select--</option>
+                    <option value="XS">XS</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
                 </select>
                 <br /><br />
                 <label htmlFor="clothType">Cloth Type: </label>
-                <select id="clothType" value={clothType} onChange={handleClothChange}>
-                    <option value="">--SELECT--</option>
+                <select id="dress-size" value={clothType} onChange={handleClothChange}>
+                    <option value="">--Select--</option>
                     <option value="silk">Silk</option>
                     <option value="cotton">Cotton</option>
                     <option value="fabric">Fabric</option>
@@ -119,9 +124,9 @@ function Ai() {
 
 
             {cart ?
-                <button onClick={addToCart} disabled={!inputText && !imageUrl && collarType === "" && clothType === ""}>Add to Cart</button>
+                <button className='AI-button' onClick={addToCart} disabled={!inputText || !imageUrl || !selectedSize || !clothType}>Add to Cart</button>
                 :
-                <Link to="/Cart"><button className='gotocart-btn'>Go to Cart</button></Link>
+                <Link to="/Cart"><button className='AI-button'>Go to Cart</button></Link>
 
             }
         </div>

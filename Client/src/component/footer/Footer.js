@@ -30,9 +30,8 @@ function Footer() {
         <footer>
             <div className='footer-main'>
                 <div>
-                    <h2>More about Orebi Shop</h2>
-                    <p className='footer-main-p'>Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit. Enim sint ab ullam, numquam nesciunt in.
+                    <h2>More about MarioAI Shop</h2>
+                    <p className='footer-main-p'>User can create their own design with proper instruction about their product!
                     </p>
                     <div className='icon'>
                         <a href='https://www.linkedin.com/in/kumara-gurubara-m/' target='_blank' rel="noreferrer" ><FaLinkedin className='icon-li' /></a>
@@ -60,7 +59,6 @@ function Footer() {
                 </div>
                 <div className='footer-subscribe'>
                     <h2>Subscribe to our newsletter.</h2>
-                    <p className='footer-main-p'>A at pellentesque et mattis porta enim elementum.</p>
                     {subscription ? (
                         <p className='successfullmsg'> Subscribed Successfully !</p>
                     ) : (
@@ -73,7 +71,7 @@ function Footer() {
                                     placeholder='Insert your email ...*'
                                 />
                                 {errMsg && (
-                                    <p className='errormsg' >{errMsg}</p> // Add your custom error message class
+                                    <p className='errormsg' >{errMsg}</p>
                                 )}
                             </div>
                             <button
@@ -87,7 +85,7 @@ function Footer() {
                 </div>
             </div>
             <hr />
-            <p className='footer-bottom'>© Copyright 2023 | Orebi shopping | All Rights Reserved </p>
+            <p className='footer-bottom'>© Copyright 2024 | MarioAi shopping | All Rights Reserved </p>
         </footer>
     )
 }

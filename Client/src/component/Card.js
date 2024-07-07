@@ -9,7 +9,7 @@ function Card(props) {
             <div className='card-content'>
                 <div className='card-topcontent'>
                     <h2>{props.productName}</h2>
-                    <p>$ {props.price}</p>
+                    <p>₹ {props.price}</p>
                 </div>
 
                 <p>{props.color}</p>

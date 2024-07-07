@@ -35,52 +35,54 @@ function Cart() {
     };
 
     return (
-        <div className='cart-container'>
-            <div className='cart-title-section'>
-                <h1 className='about-title'>Cart</h1>
-                <div className='about-from'>
-                    <span className='greaterthan'><HiOutlineChevronRight /></span>
-                    <span className='to'>Cart</span>
+        <section className='cart-section'>
+            <div className='cart-container'>
+                <div className='cart-title-section'>
+                    <h1 className='about-title'>Cart</h1>
+                    <div className='about-from'>
+                        <span className='greaterthan'><HiOutlineChevronRight /></span>
+                        <span className='to'>Cart</span>
+                    </div>
                 </div>
-            </div>
-            {list.length > 0 ? (
-                <div className='CartItem-section'>
-                    {list.map((item) => (
-                        <CartItem
-                            {...item}
-                            key={item._id}
-                            increaseItem={() => increaseItem(item)}
-                            decreaseItem={() => decreaseItem(item)}
-                            removeItem={() => removeItemFromCart(item)}
-                        />
-                    ))}
-                    <div className='payment'>
-                        <h1>Cart Totals</h1>
+                {list.length > 0 ? (
+                    <div className='CartItem-section'>
+                        {list.map((item) => (
+                            <CartItem
+                                {...item}
+                                key={item._id}
+                                increaseItem={() => increaseItem(item)}
+                                decreaseItem={() => decreaseItem(item)}
+                                removeItem={() => removeItemFromCart(item)}
+                            />
+                        ))}
+                        <div className='payment'>
+                            <h1>Cart Totals</h1>
 
-                        <div className='total'>
-                            <h2>Subtotal <span>${calculateTotal()}</span></h2>
-                            <h2>Shipping Price <span>$30</span></h2>
-                            <h2>Total Price <span>${calculateTotal() + 30}</span></h2>
+                            <div className='total'>
+                                <h2>Subtotal <span>₹ {calculateTotal()}</span></h2>
+                                <h2>Shipping Price <span>₹ 30</span></h2>
+                                <h2>Total Price <span>₹ {calculateTotal() + 30}</span></h2>
+                            </div>
+                            <Link to="/Payment"><button>Proceed To Pay</button></Link>
+
+
                         </div>
-                        <Link to="/Payment"><button>Proceed To Pay</button></Link>
+                    </div >
+                ) : (
+                    <div className='emptycart'>
+                        <img src={emptyCart} alt="Empty cart" />
+                        <div className='emptycart-content'>
+                            <h1>YOUR CART FEELS LONELY.</h1>
+                            <h2>Your Shopping cart lives to serve. Give it purpose - fill it with books, electronics, videos, etc. and make it happy.</h2>
+                            <Link to="/Shopping"><button>Continue Shopping</button></Link>
 
-
+                        </div>
                     </div>
-                </div >
-            ) : (
-                <div className='emptycart'>
-                    <img src={emptyCart} alt="Empty cart" />
-                    <div className='emptycart-content'>
-                        <h1>YOUR CART FEELS LONELY.</h1>
-                        <h2>Your Shopping cart lives to serve. Give it purpose - fill it with books, electronics, videos, etc. and make it happy.</h2>
-                        <Link to="/Shopping"><button>Continue Shopping</button></Link>
-
-                    </div>
-                </div>
-            )
-            }
-            <br />
-        </div>
+                )
+                }
+                <br />
+            </div>
+        </section>
     );
 }
 

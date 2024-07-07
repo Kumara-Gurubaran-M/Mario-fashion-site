@@ -8,15 +8,23 @@ import { Link } from "react-router-dom"
 
 function Productdetails() {
     const [cart, setCart] = useState(true)
+    const [selectedSize, setSelectedSize] = useState('M');
+
     const params = useParams();
     const dispatch = useDispatch();
     const item = SplOfferData.find(
         (element) => element._id === parseInt(params._id)
     );
     const addToCart = () => {
-        dispatch(addItem(item))
+        const itemWithSize = { ...item, size: selectedSize };
+        dispatch(addItem(itemWithSize));
         setCart(false)
     }
+
+    const handleChange = (event) => {
+        setSelectedSize(event.target.value);
+    };
+
     return (
         <div className='details-section'>
             <div className='about-from'>
@@ -28,9 +36,23 @@ function Productdetails() {
                 <img className='detail-container-img' src={item.img} alt={item.productName} />
                 <div className='details'>
                     <h1>{item.productName}</h1>
-                    <h2>${item.price}</h2>
+                    <h2>₹{item.price}</h2>
                     <h5>{item.des}</h5>
-                    <h3>Stock: <span>{item.stock}</span></h3>
+                    <div className='select-tag'>
+                        <label className='label-tag' htmlFor="dress-size">Select Dress Size:</label>
+                        <select id="dress-size" value={selectedSize} onChange={handleChange}>
+                            <option value="XS">XS</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                            <option value="XXL">XXL</option>
+                        </select>
+                        {/* {selectedSize && <p>You selected: {selectedSize}</p>} */}
+
+                    </div>
+
+                    {/* <h3>Stock: <span>{item.stock}</span></h3> */}
                     <h3>Colors: <span>{item.color}</span></h3>
                     {cart ?
                         <button onClick={addToCart}>Add to Cart</button>

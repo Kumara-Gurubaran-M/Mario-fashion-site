@@ -1,5 +1,5 @@
 import React from 'react'
-import { poster1, saleImgOne, saleImgTwo, saleImgThree, poster2, poster3 } from '../../images'
+import { poster1, poster2, poster3, poster4 } from '../../images'
 import { Link } from "react-router-dom"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -21,7 +21,7 @@ function Banner() {
                 <Link to="/Shopping"><img className='sale-banner-one' src={poster2} alt='Sale banner 1' /></Link>
                 <div className='sale-banners-ryt'>
                     <Link to="/Shopping"><img className='sale-banner-other' src={poster3} alt='Sale banner 2' /></Link>
-                    <Link to="/Shopping"><img className='sale-banner-other' src={saleImgThree} alt='Sale banner 3' /></Link>
+                    <Link to="/Shopping"><img className='sale-banner-other' src={poster4} alt='Sale banner 3' /></Link>
                 </div>
             </div>
         </>

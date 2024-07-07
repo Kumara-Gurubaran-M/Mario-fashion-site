@@ -168,7 +168,7 @@ transition-timing-function: ease-in-out;
 .card img{
   width: 100%;
   height: 50vh;
-  object-fit: contain;
+  object-fit: cover;
 }
 .card-content{
   height: auto;
@@ -199,16 +199,16 @@ transition-timing-function: ease-in-out;
 .about-title{
   font-weight: 800;
   font-size: 3rem;
-  padding-bottom: 20px;
   color: rgb(38 38 38 );
 }
 .about-from{
   display: flex;
-  column-gap: 2px;
+align-items: center;  
+column-gap: 2px;
   font-weight: 400;
   font-size: 0.975rem;
   color: grey;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
 }
 .to{
   color:rgb(38 38 38 );
@@ -264,10 +264,17 @@ transition-timing-function: ease-in-out;
   background-color:rgb(243 244 246);
   padding: 20px;
   color: rgb(38 38 38 );
-  gap: 30px;
+  
+  margin-bottom: 20px;
+  
 }
 .detail-container-img{
-  width: 100%;
+  width: 90%;
+ 
+  object-fit: contain;
+  text-align: center;
+
+
 }
 .aside{
   display: flex;
@@ -291,25 +298,31 @@ transition-timing-function: ease-in-out;
   flex-direction: column;
   row-gap: 30px;
   justify-content: center;
+  width: 100%;
 }
 .details h1{
   font-size: 2.4rem;
   font-weight: 700;
+  margin: 0;
+  margin-top: 20px;
 }
 .details h2{
   font-size: 1.5rem;
+  margin: 0;
 }
 .details h5{
   color: #767676;
   font-size: 1rem;
   font-weight: 300;
   line-height: 1.2rem;
+  margin: 0;
 }
 .details span{
   font-weight: 570;
 }
-.details h3{
+.details h3, .label-tag{
   font-weight: 500;
+  margin: 0;
 }
 .details  button{
   background-color: rgb(38 38 38 );
@@ -371,27 +384,80 @@ form textarea{
   height: 15vh;
 }
 /*----------------card item------------------------*/
+.cart-section{
+  display: grid;
+  place-items: center;
+}
 .cart-container{
-  
+  width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding-top: 59px;
+  
 }
 .cart-title-section{
-
   width: 90%;
-  margin-top: 40px;
-  
-
 }
 .CartItem-section{
-  /*display: grid;
-  place-items: center;*/
+ 
   width: 90%;
+}
+.cartItem{
+  display: flex;
+  border:1px solid #767676;
+  padding: 10px;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.cartItem-img{
+  width: 20%;
+  object-fit: contain;
+}
+.cartItem-details{
+  font-size: 15px;
+  color: #767676;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
   
-  
+}
+
+
+.cartItem-details h2{
+  font-weight: 500;
+  margin: 0;
+
+}
+.cartItem-details span{
+  color: black;
+}
+
+.cartItem-count{
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.cartItem-count button{
+  width: 32px;
+  height: 4vh;
+  border-radius: 15px;
+  border-color: transparent;
+  background-color: rgb(204, 201, 201);
+  font-size: 15px;
+}
+.cartItem-details button:hover{
+  border-color: #767676;
+}
+
+.cancel{
+  margin-left: auto;
+  color: red;
+}
+.cancel:hover{
+  color: rgb(199, 0, 0);
 }
 .emptycart{
   display: flex;
@@ -427,66 +493,7 @@ form textarea{
 .emptycart-content button:hover{
   background-color: black;
 }
-.cartItem{
-  padding: 10px;
-  border: 1px #767676 solid;
-  
-  gap: 30px;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(230px,1fr));
-  place-items: center;
-  margin-bottom: 20px;
-}
-.cartItem-count{
-  display: flex;
-  column-gap: 20px;
-  justify-content: center;
-  align-items: center;
-}
-.cartItem-count button{
-  font-size: 1.5rem;
-  width: 100%;
-  padding: 5px 10px;
-  height:5vh;
-  background-color: rgb(38 38 38 );
-  color: white;
-  border-color: transparent;
-  text-align: center;
-}
-.cartItem-count button:hover{
-  background-color: black;
-  color: white;
-  border: 1px black solid;
-}
-.cartItem-img{
-  width: 80%;
-  height: 80%;
-}
-.cartItem h1{
-  font-size: 1.5rem;
-  font-weight: 450;
-}
-.cartItem h2{
-  font-size: 1.3rem;
-  font-weight: 500;
-}
-.cartItem span{
-  font-weight: 600;
-}
-.cancel{
-  margin-bottom: 2px;
-  color: rgb(212, 13, 13);
 
-}
-.cartItem-img-container{
-  display: flex;
-  column-gap: 10px;
-  align-items: center;
-}
-.cancel:hover{
-  color: rgb(215, 19, 19);
-}
 .payment{
   display: flex;
   flex-direction: column;
@@ -495,7 +502,6 @@ form textarea{
   width: 100%;
 }
 .total{
-  border:0.5px #767676 solid;
   width: 30%;
 }
 .total h2{
@@ -506,6 +512,7 @@ form textarea{
   width: 100%;
   font-size: 1.3rem;
   font-weight: 400;
+  margin: 0;
 }
 .total span{
   font-weight: 600;
@@ -532,7 +539,7 @@ form textarea{
 /*-------------------footer-----------------------*/
 footer{
   background-color: #e5e7eb;
-  padding: 70px;
+  padding: 30px;
   text-align: center;
   font-family: Poppins, sans-serif;
   border-top: 1px rgb(183, 180, 180) solid;
@@ -629,7 +636,7 @@ footer{
 }
 .footer-bottom{
   color: grey;
-  padding-top: 40px;
+  padding-top: 20px;
 }
 footer p{
   line-height: 1.5rem;
@@ -637,23 +644,19 @@ footer p{
   font-size: 1rem;
   
 }
+/* --------------selct tag-------------- */
+.select-tag{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  text-align: center;
+}
+#dress-size{
+  padding: 5px;
+}
 /*--------------------RESPONSIVE CODE-----------------------*/
-@media screen and (max-width:1442px){
-  .cartItem{
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(190px,1fr));
 
-  }
-  
-}
-@media screen and (max-width:1218px){
-  .cartItem{
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(160px,1fr));
 
-  }
-  
-}
 @media screen and (max-width:1144px){
   .card-content h2{
     font-size: 1.9rem;
@@ -662,19 +665,22 @@ footer p{
   .card-content p{
     font-size: 1.3rem;
   }
-  
-}
-@media screen and (max-width:1066px){
-  .cartItem{
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(135px,1fr));
-    
-
+  .cart-container{
+    width: 100%;
   }
   
 }
 
 
+@media screen and (max-width:1040px){
+  .cartItem{
+    padding: 10px;
+  }
+  .cartItem-img{
+    width: 25%;
+  }
+  
+} 
 @media screen and (max-width:1070px) {
   .detail-container{
     display: grid;
@@ -687,6 +693,18 @@ footer p{
   .cartItem-count button{
     padding: 3px 6px;
     height: 4vh;
+  }
+  .details h1{
+    font-size: 27px;
+  }
+  .details h2{
+    font-size: 20px;
+  }
+  .details h5{
+    font-size: 15px;
+  }
+  .details button{
+    height: 5vh;
   }
   
 }
@@ -744,13 +762,12 @@ footer p{
   
 }
 
-@media screen and (max-width:911px){
-  .cartItem{
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(109px,1fr));
-    
-
+@media screen and (max-width:880px){
+  .detail-container-img{
+    width: 100%;
+    height: auto;
   }
+  
   
 }
 
@@ -765,41 +782,16 @@ footer p{
     width: 40%;
     border-radius: 20px;
   }
+  .cartItem-img{
+    width: 30%;
+  }
   
   
 }
 @media screen and (max-width:765px){
   /*-----------------cartItem------------------------*/
-  .cartItem{
-    display: grid;
-    grid-template-columns: 1fr;
-  }
+ 
   
-  .cartItem-img-container{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-  }
-  .cancel{
-    width: auto;
-    height: 3vh;
-    margin: 15px 0;
-  }
-  .cartItem-img{
-    width: 100%;
-  }
-  .cartItem h1{
-    font-size: 1.8rem;
-    font-weight:600 ;
-  }
-  .cartItem h2{
-    font-size: 1.5rem;
-  }
-  .cartItem-count button{
-    padding: 4px 8px;
-    height: auto;
-  }
   .total{
     width: 40%;
   }
@@ -817,6 +809,9 @@ footer p{
     font-size: 1rem;
     font-weight: 520;
   }
+  .cart-section{
+    width: 100%;
+  }
   .total{
     width: 55%;
   }
@@ -830,6 +825,23 @@ footer p{
   .emptycart-content{
     width: 90%;
   }
+  .cartItem-details{
+    justify-content: center;
+
+  }
+  
+  .cartItem-details h2{
+    font-weight: 200;
+    margin: 4px 0px;
+    font-size: 19px;
+  }
+  .cartItem-count button{
+    height: 3.5vh;
+    width: 28px;
+    padding: 3px;
+  }
+ 
+  
   
 }
 @media screen and (max-width:547px) {
@@ -849,6 +861,21 @@ footer p{
   }
   .sale-banners-ryt{
     row-gap: 20px;
+  }
+  .cartItem-img{
+    width: 40%;
+  }
+  
+  .cartItem-details h2{
+    font-weight: 500;
+    font-size: 15px;
+  
+  }
+  .total h2{
+    font-size: 16px;
+  }
+  .detail-container-img{
+    height: auto;
   }
   
 }
@@ -878,6 +905,14 @@ footer p{
     display: grid;
     grid-template-columns: 1fr;
   }
+ 
+  .cartItem-details h2{
+    font-size: 16px;
+  }
+  .cartItem-count button{
+    width: 23px;
+    height: 3vh;
+  }
 }
 /*---------AI------------------*/
 .ai{
@@ -896,7 +931,19 @@ footer p{
   list-style: none;
 
 }
-.ai button{
+.options{
+  margin-top: 20px;
+}
+.AI-button{
+  margin: 10px 0px;
+  background-color:gray ;
+  color: white;
+  border-color: transparent;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+.ai-button{
   background-color:gray ;
   color: white;
   border-color: transparent;
