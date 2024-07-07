@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 
 const API_URL = "https://ai.api.nvidia.com/v1/genai/stabilityai/sdxl-turbo";
-const API_KEY = "Bearer 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";
+const API_KEY = "Bearer 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";
 router.post('/', async function (req, res, next) {
     console.log("Request body received:", req.body);
 

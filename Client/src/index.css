@@ -168,11 +168,11 @@ transition-timing-function: ease-in-out;
 .card img{
   width: 100%;
   height: 50vh;
-  object-fit: cover;
+  object-fit: contain;
 }
 .card-content{
   height: auto;
-  padding: 20px;
+  padding: 0px 20px;
 }
 .card-content p{
   color: #767676;

@@ -1,12 +1,5 @@
 import {
-  spfOne,
-  spfTwo,
-  spfThree,
-  spfFour,
-  bestSellerOne,
-  bestSellerTwo,
-  bestSellerThree,
-  bestSellerFour,
+
   girl1,
   girl2,
   girl3,
@@ -18,11 +11,7 @@ import {
   bblackovershirt,
   bblackfloralshirt,
   bbrownjacket,
-  gwhiteshirt2,
-  newArrOne,
-  newArrTwo,
-  newArrThree,
-  newArrFour,
+
 } from "../images/index";
 // =================== NavBarList End here ======================
 // =================== Special Offer data Start here ============
@@ -185,15 +174,6 @@ export const paginationItems = [
     badge: true,
     des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
   },
-  {
-    _id: 1020,
-    img: gwhiteshirt2,
-    productName: "Shirt",
-    stock: 20,
-    price: "80.00",
-    color: "White",
-    badge: true,
-    des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-  }
+
 ];
 // =================== PaginationItems End here =================
