@@ -751,6 +751,12 @@ footer p{
   .about-content{
     width: 80%;
   }
+  .login button{
+    width: 25%;
+  }
+  .login{
+    width: 60%;
+  }
   
   /*------------footer----------------*/
   footer{
@@ -784,6 +790,12 @@ footer p{
   }
   .cartItem-img{
     width: 30%;
+  }
+  .login h1{
+    font-size: 30px;
+  }
+  .login label{
+    font-size: 17px;
   }
   
   
