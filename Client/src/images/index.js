@@ -1,9 +1,9 @@
 import logo from "./orebiLogo.png";
 
 import poster1 from "./banner/topbanner.png";
-import poster2 from "./banner/harizontalbanner.png";
+import poster2 from "./banner/harizontalbanner-min.png";
 import poster3 from "./sale/poster3.png";
-import poster4 from "./banner/bottombanner.png";
+import poster4 from "./banner/bottombanner-min.png";
 
 // ============== Products Start here ====================
 // New Arrivals

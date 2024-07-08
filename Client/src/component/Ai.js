@@ -83,7 +83,7 @@ function Ai() {
     return (
         <div className='ai'>
             <h1>Customize your own Custom</h1>
-            <p>Please give a proper detailed instruction about your coustum to get perfect design as you think and mention gender </p>
+            <p>Give a proper detailed instruction about your custum to get perfect design as you think and mention gender </p>
             <div className='about'>
                 <input
                     type='search'
